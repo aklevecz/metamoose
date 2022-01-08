@@ -1,0 +1,9 @@
+.wrapper {
+  max-width: 40px;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.wrapper:hover {
+  mix-blend-mode: difference;
+}

@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@800&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 12px;
+  overflow: hidden;
+  color: white;
+}
+
+@media screen and (max-height: 600px) {
+  html,
+  body {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-column-space-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 30px;
+}
+
+.text-sm {
+  font-size: 1.5rem;
+}
+
+button {
+  font-family: "Exo 2", sans-serif;
+  border: none;
+  font-size: 1.5rem;
+  background: white;
+  mix-blend-mode: difference;
+  color: #2081e2;
+  padding: 15px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 250px;
+  margin: auto;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+  mix-blend-mode: luminosity;
+}
+
+button.sm {
+  width: 110px;
+  font-size: 1rem;
+  background: #2081e2;
+  mix-blend-mode: unset;
+  color: white;
+  padding: 10px;
+  margin-top: 5px;
+}

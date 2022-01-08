@@ -1,0 +1,77 @@
+.container {
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+}
+
+.socials {
+  display: flex;
+}
+
+.socials > div:first-of-type {
+  margin-left: 0px;
+}
+
+.socials > div {
+  margin-left: 10px;
+}
+
+.headerText {
+  font-size: 4rem;
+  color: white;
+  font-family: "Exo 2", sans-serif;
+}
+
+.top {
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bottom {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+.blockText {
+  color: #fff;
+  font-size: 2.5rem;
+  font-family: "Exo 2", sans-serif;
+  text-align: center;
+  padding: 10px;
+  max-width: 420px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex: 0 0 30%;
+}
+
+.remaining {
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+  color: white;
+  font-family: "EXO 2";
+  margin-bottom: 30px;
+}

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.flexSpacer {
+  flex: 0 0 0%;
+}
+
+.iconWrapper {
+  max-width: 40px;
+  /* margin-left: 20px; */
+}
+
+@media screen and (min-width: 768px) {
+  .flexSpacer {
+    /* flex: 0 0 70%; */
+  }
+}
