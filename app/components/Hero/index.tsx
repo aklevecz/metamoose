@@ -17,7 +17,7 @@ export default function Hero({ height }: Props) {
             height,
           }}
         >
-          <img src="/moose.png" />
+          <img src="/moose.gif" />
         </div>
       </div>
     </div>
