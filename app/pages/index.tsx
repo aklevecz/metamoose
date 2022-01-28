@@ -1,71 +1,51 @@
 import type { NextPage } from "next";
 import { useEffect } from "react";
-import Socials from "../components/Socials";
-import ThreeBackground from "../components/ThreeBackground";
-import { useMetaMoose } from "../contexts/Contract";
-import { useModal } from "../contexts/Modal";
-import { useAccounts, useMetaMask, useWalletConnect } from "../contexts/Web3";
-import styles from "../styles/Home.module.css";
+import { useAccounts } from "../contexts/Web3";
 import useDevice from "../hooks/useDevice";
-import Hero from "../components/Hero";
+
+import FullHeightContainer from "../components/Home/FullHeightContainer";
+import ThreeBackground from "../components/ThreeBackground";
+
+import Socials from "../components/Socials";
+import Hero from "../components/Home/Hero";
 import SmallBlue from "../components/Button/SmallBlue";
+import ConnectButton from "../components/Home/ConnectButton";
+import MintButton from "../components/Home/MintButton";
+import Remaining from "../components/Home/Remaining";
+
+import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  const { viewHeight, isMobile } = useDevice();
-  const { connect, hasMetaMask } = useMetaMask();
-  const { connect: wConnect } = useWalletConnect();
-  const { mint, remaining } = useMetaMoose();
-  const { openModal } = useModal();
+  const { isMobile } = useDevice();
   const accounts = useAccounts();
-
-  useEffect(() => {
-    localStorage.removeItem("walletconnect");
-  }, []);
-
-  const mintMoose = () => {
-    mint();
-    openModal();
-  };
 
   const hasWallet = accounts.length > 0;
   if (isMobile) {
     return (
-      <div
-        style={{ height: viewHeight ? viewHeight : "unset" }}
-        className={styles.container}
-      >
-        <Hero height={viewHeight ? viewHeight * 0.3 : 0} />
-        <div className={styles.bottom}>
+      <FullHeightContainer>
+        <Hero />
+        <div className="flex-column space-between all-center flex-fill">
           <div className={styles.blockText}>
-            <div>Coming soon to a Metaverse near you!</div>
+            Coming soon to a Metaverse near you!
           </div>
-          <div>
-            {!hasWallet && (
-              <button onClick={hasMetaMask ? connect : wConnect}>
-                Connect
-              </button>
-            )}
-            {hasWallet && <button onClick={mintMoose}>Mint</button>}
-            <div className="p-2 text-sm bold">Try it out on Rinkeby!</div>
-          </div>
+          {hasWallet ? <MintButton /> : <ConnectButton />}
+          <div className="p-2 text-sm bold">Try it out on Rinkeby!</div>
           <div className={styles.remaining}>
-            {remaining ? <div>{remaining} Remaining</div> : <div>...</div>}
+            <Remaining />
             <SmallBlue>OpenSea</SmallBlue>
           </div>
           <Socials />
         </div>
         <ThreeBackground />
-      </div>
+      </FullHeightContainer>
     );
   }
 
   return (
-    <div
-      style={{ height: viewHeight ? viewHeight : "unset" }}
-      className={styles.container}
-    >
+    <FullHeightContainer>
+      <div>hi</div>
       <ThreeBackground />
-    </div>
+    </FullHeightContainer>
   );
 };
 

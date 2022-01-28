@@ -1,14 +1,7 @@
 .container {
   padding: 10px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-}
-
-.header {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .nav {
@@ -25,33 +18,6 @@
 
 .socials > div {
   margin-left: 10px;
-}
-
-.headerText {
-  font-size: 4rem;
-  color: white;
-  font-family: "Exo 2", sans-serif;
-}
-
-.top {
-  flex: 0 0 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.bottom {
-  margin-top: 10px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  box-sizing: border-box;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  margin: auto;
 }
 
 .blockText {
@@ -74,4 +40,23 @@
   color: white;
   font-family: "EXO 2";
   margin-bottom: 30px;
+}
+
+.headerText {
+  font-size: 4rem;
+  color: white;
+  font-family: "Exo 2", sans-serif;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container img {
+  height: auto;
+  width: 100%;
 }

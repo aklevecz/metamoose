@@ -38,6 +38,36 @@ a {
   flex: 1 1 auto;
 }
 
+.bottom {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.all-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-fill {
+  flex: 1;
+}
+
 .flex-column-space-around {
   display: flex;
   flex-direction: column;
@@ -50,6 +80,10 @@ a {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 10px;
 }
 
 .mt-3 {
