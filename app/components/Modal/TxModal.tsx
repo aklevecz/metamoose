@@ -6,7 +6,6 @@ import { getRinkebyEtherscanTrasactionUrl } from "../../contexts/utils";
 import { delay } from "../../utils";
 import Gear from "../Icons/Gear";
 import Pen from "../Icons/Pen";
-import Smiler from "../Icons/Smiler";
 import Ripple from "../Loading/Ripple";
 
 const txStateMap = {

@@ -50,13 +50,17 @@ a {
   margin: auto;
 }
 
-.flex-column {
+.flex-col {
   display: flex;
   flex-direction: column;
 }
 
 .space-between {
   justify-content: space-between;
+}
+
+.col-hor-center {
+  align-items: center;
 }
 
 .all-center {
@@ -84,6 +88,10 @@ a {
 
 .mt-1 {
   margin-top: 10px;
+}
+
+.mt-2 {
+  margin-top: 20px;
 }
 
 .mt-3 {

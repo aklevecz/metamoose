@@ -17,19 +17,20 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const { isMobile } = useDevice();
-  const accounts = useAccounts();
+  const { hasWallet } = useAccounts();
 
-  const hasWallet = accounts.length > 0;
   if (isMobile) {
     return (
       <FullHeightContainer>
         <Hero />
-        <div className="flex-column space-between all-center flex-fill">
-          <div className={styles.blockText}>
+        <div className="flex-col space-between col-hor-center flex-fill">
+          <div className={`${styles.blockText} mt-2`}>
             Coming soon to a Metaverse near you!
           </div>
-          {hasWallet ? <MintButton /> : <ConnectButton />}
-          <div className="p-2 text-sm bold">Try it out on Rinkeby!</div>
+          <div>
+            {hasWallet ? <MintButton /> : <ConnectButton />}
+            <div className="p-2 text-sm bold">Try it out on Rinkeby!</div>
+          </div>
           <div className={styles.remaining}>
             <Remaining />
             <SmallBlue>OpenSea</SmallBlue>

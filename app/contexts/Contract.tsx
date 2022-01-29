@@ -111,7 +111,7 @@ type TxResponse = {
 export const useMetaMoose = () => {
   const context = useContext(ContractContext);
   const provider = useProvider();
-  const accounts = useAccounts();
+  const { accounts } = useAccounts();
 
   const [remaining, setRemaining] = useState<null | number>(null);
 

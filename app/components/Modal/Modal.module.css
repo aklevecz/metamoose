@@ -9,10 +9,7 @@
   font-family: "Exo 2";
   text-align: center;
   height: 300px;
-  -moz-box-pack: center;
   justify-content: center;
-  -moz-box-align: center;
-  /* align-items: center; */
   font-size: 2rem;
   margin-top: -150px;
   border-radius: 30px;

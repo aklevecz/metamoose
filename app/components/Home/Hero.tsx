@@ -1,4 +1,5 @@
 import styles from "../../styles/Home.module.css";
+import Img from "../Img";
 
 export default function Hero() {
   return (
@@ -6,14 +7,7 @@ export default function Hero() {
       <div className={styles.headerText}>
         <div>MetaMoose</div>
       </div>
-      <div
-        style={{
-          width: "60%",
-          height: "100%",
-        }}
-      >
-        <img src="/moose.gif" />
-      </div>
+      <Img src="/moose.gif" height="25vh" />
     </div>
   );
 }

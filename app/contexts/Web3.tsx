@@ -158,5 +158,5 @@ export const useAccounts = () => {
 
   const { state } = context;
 
-  return state.accounts;
+  return { accounts: state.accounts, hasWallet: state.accounts.length > 0 };
 };
