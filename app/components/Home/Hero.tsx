@@ -7,7 +7,7 @@ export default function Hero() {
       <div className={styles.headerText}>
         <div>MetaMoose</div>
       </div>
-      <Img src="/moose.gif" height="25vh" />
+      <Img src="/moose.gif" height="45vh" />
     </div>
   );
 }
