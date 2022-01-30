@@ -11,5 +11,7 @@ export default function Img({ src, height, width }: Props) {
   if (width && !height) {
     height = "auto";
   }
-  return <img style={{ height, width }} src={src} />;
+  return (
+    <img style={{ height, width, position: "relative", zIndex: 1 }} src={src} />
+  );
 }

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import React, { CSSProperties, StyleHTMLAttributes } from "react";
 
 type Transition = {
   type: string;
@@ -8,6 +9,7 @@ type Transition = {
 type Props = {
   children: JSX.Element | JSX.Element[] | string;
   className?: string;
+  style?: CSSProperties;
   scale?: number;
   initial?: number;
   transition?: Transition;
@@ -21,6 +23,7 @@ export default function ScaleDiv({
   delay = 0,
   transition = { type: "spring", stiffness: 100 },
   className,
+  style,
 }: Props) {
   return (
     <motion.div
@@ -28,6 +31,7 @@ export default function ScaleDiv({
       initial={{ scale: initial }}
       transition={{ ...transition, delay }}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>
