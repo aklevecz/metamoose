@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import useDevice from "../hooks/useDevice";
 
 import FullHeightContainer from "../components/Home/FullHeightContainer";
+import ScaleDiv from "../components/Animations/ScaleDiv";
 import ThreeBackground from "../components/ThreeBackground";
 
 import Socials from "../components/Socials";
@@ -17,9 +18,9 @@ const Home: NextPage = () => {
       <FullHeightContainer>
         <Hero />
         <div className="flex-col space-between col-hor-center flex-fill">
-          <div className={`${styles.blockText} mt-2`}>
+          <ScaleDiv delay={2} className={`${styles.blockText} mt-2`}>
             Coming soon to a Metaverse near you!
-          </div>
+          </ScaleDiv>
           <Socials />
         </div>
         <ThreeBackground />
