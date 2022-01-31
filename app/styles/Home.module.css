@@ -38,9 +38,12 @@
 }
 
 .headerText {
-  font-size: 4rem;
+  font-size: 12rem;
   color: white;
   font-family: "Exo 2", sans-serif;
+  text-transform: uppercase;
+  padding-bottom: -9px;
+  line-height: 1.8;
 }
 
 .heroContainer {
@@ -52,13 +55,43 @@
 }
 
 .pictureFrame {
-  position: absolute;
-  left: 0px;
-  top: -3px;
+  visibility: hidden;
+}
+.headerContainer {
+  display: flex;
+}
+.banner {
   background: white;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
   mix-blend-mode: difference;
-  border-radius: 99px;
+  color: #2081e2;
+  opacity: 85%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+}
+.bannerText {
+  font-family: "Exo 2", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .headerText {
+    position: unset;
+    font-size: 4rem;
+    line-height: unset;
+  }
+  .pictureFrame {
+    visibility: visible;
+    position: absolute;
+    left: 0px;
+    top: -3px;
+    background: white;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    mix-blend-mode: difference;
+    border-radius: 99px;
+  }
 }

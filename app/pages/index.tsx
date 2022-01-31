@@ -9,6 +9,9 @@ import Socials from "../components/Socials";
 import Hero from "../components/Home/Hero";
 
 import styles from "../styles/Home.module.css";
+import Header from "../components/Home/Header";
+import HeroDesktop from "../components/Home/HeroDesktop";
+import { useModal } from "../contexts/Modal";
 
 const Home: NextPage = () => {
   const { isMobile } = useDevice();
@@ -30,7 +33,11 @@ const Home: NextPage = () => {
 
   return (
     <FullHeightContainer>
-      <div>hi</div>
+      <Header />
+      <HeroDesktop />
+      <div className={styles.banner}>
+        <div className={styles.bannerText}>Coming soon to a Metaverse near you!</div>
+        </div>
       <ThreeBackground />
     </FullHeightContainer>
   );
