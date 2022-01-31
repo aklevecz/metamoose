@@ -6,7 +6,7 @@ export default function Modal() {
   const { open, closeModal } = useModal();
   return (
     <ClientOnlyModalRoot open={open} closeModal={closeModal}>
-      <TxModal />
+      <div>hi meg we love you :)</div>
     </ClientOnlyModalRoot>
   );
 }

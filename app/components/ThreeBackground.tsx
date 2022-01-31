@@ -142,6 +142,7 @@ export default function ThreeBackground() {
         width: "100%",
         height: "100%",
         zIndex: -1,
+        opacity: "85%"
       }}
     >
       <canvas style={{ width: "100%", height: "100%" }} id="c" />
