@@ -59,18 +59,23 @@
 
 @media screen and (min-width: 768px) {
   .heroContainer {
-    justify-content: space-between;
-    height: 75%;
     position: relative;
     flex: unset;
   }
   .headerTextImg {
-    height: 30vh;
+    height: 25vh;
     width: auto;
   }
   .mooseDiv {
     bottom: 1rem;
   }
+}
+
+.iconWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin: 20px 20px 0;
 }
 
 .headerText {
