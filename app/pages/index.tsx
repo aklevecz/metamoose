@@ -11,7 +11,6 @@ import Hero from "../components/Home/Hero";
 import styles from "../styles/Home.module.css";
 import Header from "../components/Home/Header";
 import HeroDesktop from "../components/Home/HeroDesktop";
-import { useModal } from "../contexts/Modal";
 
 const Home: NextPage = () => {
   const { isMobile } = useDevice();
@@ -19,12 +18,12 @@ const Home: NextPage = () => {
   if (isMobile) {
     return (
       <FullHeightContainer>
-        <Hero />
-        <div className="flex-col space-between col-hor-center flex-fill">
-          <ScaleDiv delay={2} className={`${styles.blockText} mt-2`}>
+        <Socials />
+        <HeroDesktop />
+        <div className={styles.banner}>
+          <div className={styles.bannerText}>
             Coming soon to a Metaverse near you!
-          </ScaleDiv>
-          <Socials />
+          </div>
         </div>
         <ThreeBackground />
       </FullHeightContainer>
@@ -34,10 +33,14 @@ const Home: NextPage = () => {
   return (
     <FullHeightContainer>
       <Header />
-      <HeroDesktop />
+      <div className="flex flex-fill all-center">
+        <HeroDesktop />
+      </div>
       <div className={styles.banner}>
-        <div className={styles.bannerText}>Coming soon to a Metaverse near you!</div>
+        <div className={styles.bannerText}>
+          Coming soon to a Metaverse near you!
         </div>
+      </div>
       <ThreeBackground />
     </FullHeightContainer>
   );

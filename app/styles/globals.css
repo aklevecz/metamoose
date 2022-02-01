@@ -50,6 +50,10 @@ a {
   margin: auto;
 }
 
+.flex {
+  display: flex;
+}
+
 .flex-col {
   display: flex;
   flex-direction: column;

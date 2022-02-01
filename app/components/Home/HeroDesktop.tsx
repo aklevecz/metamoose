@@ -2,22 +2,20 @@ import Img from "../Img";
 import ScaleDiv from "../Animations/ScaleDiv";
 
 import styles from "../../styles/Home.module.css";
-import { motion } from "framer-motion";
-import { unstable_batchedUpdates } from "react-dom";
+import ScaledImg from "../Animations/ScaledImg";
 
 export default function HeroDesktop() {
   return (
-    <div className={styles.heroContainer}>
-      <div className={styles.headerText}>
-        <ScaleDiv>Meta</ScaleDiv>
-      </div>
-      <ScaleDiv delay={1.5} style={{ position: "absolute" }}>
+    <div style={{ position: "relative" }} className={styles.heroContainer}>
+      <ScaledImg src="/metaText.png" className={styles.headerTextImg} />
+      <ScaledImg
+        src="/mooseGrassFrog.png"
+        className={styles.headerTextImg}
+        style={{ zIndex: 1 }}
+      />
+      <ScaleDiv delay={1.5} className={styles.mooseDiv}>
         <Img src="/moose.gif" height="48vh" />
-        <div className={styles.pictureFrame} />
       </ScaleDiv>
-      <div className={styles.headerText} style={{zIndex: "1"}}>
-      <ScaleDiv>Moose</ScaleDiv>
-      </div>
     </div>
   );
 }

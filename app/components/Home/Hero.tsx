@@ -1,19 +1,27 @@
 import Img from "../Img";
 import ScaleDiv from "../Animations/ScaleDiv";
+import ScaledImg from "../Animations/ScaledImg";
 
 import styles from "../../styles/Home.module.css";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <div className={styles.heroContainer}>
+    <div style={{ position: "relative" }} className={styles.heroContainer}>
       <div className={styles.headerText}>
-        <ScaleDiv>MetaMoose</ScaleDiv>
+        <ScaleDiv>Meta</ScaleDiv>
       </div>
-      <ScaleDiv delay={1.5} style={{ position: "relative" }}>
+      <div className={styles.headerText}>
+        <ScaleDiv>Moose</ScaleDiv>
+      </div>
+      <ScaleDiv delay={1.5} style={{ position: "absolute", bottom: 0 }}>
         <Img src="/moose.gif" height="45vh" />
-        <div className={styles.pictureFrame} />
       </ScaleDiv>
+      <ScaledImg
+        delay={1.5}
+        src="/grassLineRocks.png"
+        style={{ bottom: "-0.7rem" }}
+        className={styles.grassLine}
+      />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { CSSProperties, StyleHTMLAttributes } from "react";
+import React, { CSSProperties } from "react";
 
 type Transition = {
   type: string;
@@ -7,7 +7,7 @@ type Transition = {
 };
 
 type Props = {
-  children: JSX.Element | JSX.Element[] | string;
+  src: string;
   className?: string;
   style?: CSSProperties;
   scale?: number;
@@ -17,8 +17,8 @@ type Props = {
   onAnimationComplete?: any;
 };
 
-export default function ScaleDiv({
-  children,
+export default function ScaledImg({
+  src,
   scale = 1,
   initial = 0,
   delay = 0,
@@ -28,15 +28,14 @@ export default function ScaleDiv({
   onAnimationComplete,
 }: Props) {
   return (
-    <motion.div
+    <motion.img
+      src={src}
       animate={{ scale }}
       initial={{ scale: initial }}
       transition={{ ...transition, delay }}
       className={className}
       style={style}
       onAnimationComplete={onAnimationComplete}
-    >
-      {children}
-    </motion.div>
+    />
   );
 }
