@@ -3,9 +3,12 @@ import * as THREE from "three";
 
 const fragmentShader = `
 #define OCTAVES 1
+#define PI 3.1415926538
 uniform vec3 iResolution;
 uniform float iTime;
 uniform vec2 iMouse;
+uniform sampler2D iTexture;
+
 float random (in vec2 uv) {
     return fract(sin(dot(uv.xy,
                          vec2(12.9898,78.233)))*
@@ -49,11 +52,27 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     
     uv.x *= iResolution.x/iResolution.y;
 
-    vec3 col = 0.5 * .5 + cos(iTime + iMouse.x * .01 + 6. * fbm(uv * atan(3.0))+ vec3(0,23,21));
-	
-    col += fbm(uv * atan(3.0));
-    
-    fragColor = vec4(col,1.0);
+    float noiseValue2 = fbm(uv * atan(3.0));
+    vec3 col2 = 0.5 * .5 + cos(iTime + iMouse.x * .01 + 6. * noiseValue2 + vec3(0,23,21));
+    // col += fbm(uv * atan(3.0));
+
+    float scale = 5.;
+    float offset = .5;
+
+    vec2 st = uv;
+    float angle = noise( uv + (iTime * 0.01) + (iMouse.x *.01) )*PI;
+    float radius = offset;
+    uv *= scale;
+    uv *= radius * vec2(sin(angle), cos(angle));
+    vec4 t = texture2D(iTexture, uv);
+    if (t.a == 0.) {
+      t = vec4(0.,0.,0.,0.);
+    }
+    float cut = .8;
+    if (t.x > cut && t.y > cut && t.z > cut){
+      t = vec4(0.,0.,0.,0.);
+    }
+    fragColor = t + vec4(col2, 1.);
 }
 void main() {
     mainImage(gl_FragColor, gl_FragCoord.xy);
@@ -77,16 +96,20 @@ export default function ThreeBackground() {
     const scene = new THREE.Scene();
     const plane = new THREE.PlaneGeometry(2, 2);
 
+    const mooseTexture = new THREE.TextureLoader().load("/moose_9-01.png");
+
     const uniforms = {
       iTime: { value: 0 },
       iResolution: { value: new THREE.Vector3() },
       iMouse: { value: new THREE.Vector2() },
+      iTexture: { type: "t", value: mooseTexture },
     };
 
     const material = new THREE.ShaderMaterial({
       fragmentShader,
       uniforms,
     });
+
     scene.add(new THREE.Mesh(plane, material));
 
     function resizeRendererToDisplaySize(renderer: THREE.WebGLRenderer) {
@@ -142,7 +165,7 @@ export default function ThreeBackground() {
         width: "100%",
         height: "100%",
         zIndex: -1,
-        opacity: "85%"
+        opacity: "85%",
       }}
     >
       <canvas style={{ width: "100%", height: "100%" }} id="c" />

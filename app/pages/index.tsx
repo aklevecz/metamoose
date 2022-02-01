@@ -19,7 +19,7 @@ const Home: NextPage = () => {
     return (
       <FullHeightContainer>
         <Socials />
-        <HeroDesktop />
+        <Hero />
         <div className={styles.banner}>
           <div className={styles.bannerText}>
             Coming soon to a Metaverse near you!

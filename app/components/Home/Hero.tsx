@@ -1,27 +1,40 @@
 import Img from "../Img";
 import ScaleDiv from "../Animations/ScaleDiv";
-import ScaledImg from "../Animations/ScaledImg";
 
 import styles from "../../styles/Home.module.css";
+import ScaledImg from "../Animations/ScaledImg";
 
 export default function Hero() {
   return (
     <div style={{ position: "relative" }} className={styles.heroContainer}>
-      <div className={styles.headerText}>
-        <ScaleDiv>Meta</ScaleDiv>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          flex: "0 0 40%",
+          justifyContent: "center",
+        }}
+      >
+        <ScaledImg src="/metaText.png" className={styles.headerTextImg} />
+        <ScaledImg
+          src="/mooseGrassFrog.png"
+          className={styles.headerTextImg}
+          style={{ zIndex: 1, marginTop: -60 }}
+        />
       </div>
-      <div className={styles.headerText}>
-        <ScaleDiv>Moose</ScaleDiv>
-      </div>
-      <ScaleDiv delay={1.5} style={{ position: "absolute", bottom: 0 }}>
-        <Img src="/moose.gif" height="45vh" />
-      </ScaleDiv>
-      <ScaledImg
+      <ScaleDiv
         delay={1.5}
-        src="/grassLineRocks.png"
-        style={{ bottom: "-0.7rem" }}
-        className={styles.grassLine}
-      />
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          width: "100%",
+        }}
+      >
+        <img src="/moose.gif" style={{ width: "auto", height: "40vh" }} />
+      </ScaleDiv>
     </div>
   );
 }

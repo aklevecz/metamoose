@@ -48,7 +48,8 @@
 
 .headerTextImg {
   height: auto;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .mooseDiv {
@@ -115,6 +116,6 @@
     left: 0px;
   }
   .bannerText {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
