@@ -96,7 +96,7 @@ export default function ThreeBackground() {
     const scene = new THREE.Scene();
     const plane = new THREE.PlaneGeometry(2, 2);
 
-    const mooseTexture = new THREE.TextureLoader().load("/moose_9-01.png");
+    const mooseTexture = new THREE.TextureLoader().load("/moose_9-01.jpg");
 
     const uniforms = {
       iTime: { value: 0 },
