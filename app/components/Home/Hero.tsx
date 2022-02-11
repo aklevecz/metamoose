@@ -75,7 +75,7 @@ export default function Hero() {
             src="/moose.gif"
             style={{
               width: "auto",
-              height: "40vh",
+              height: "35vh",
               display: imgLoaded ? "block" : "none",
             }}
           />
